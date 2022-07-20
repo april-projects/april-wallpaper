@@ -28,12 +28,8 @@ jobs:
          git config --local user.email "mobaijun8@163.com"
          git config --local user.name "mobaijun"
          git pull
-         git add README.md
-         git commit -m ":sparkles: update readme.md"
-         git add wallpaper.md
-         git commit -m ":sparkles: update wallpaper.md"
-         git add picture/*
-         git commit -m ":sparkles: update picture/*"
+         git add .
+         git commit -m ":sparkles: update *.md"
     - name: Push changes
       uses:  ad-m/github-push-action@master
       with:
