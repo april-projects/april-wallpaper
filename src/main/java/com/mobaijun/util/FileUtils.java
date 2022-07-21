@@ -2,6 +2,7 @@ package com.mobaijun.util;
 
 import com.mobaijun.common.util.PrintUtils;
 import com.mobaijun.common.util.constant.NumberConstant;
+import com.mobaijun.model.Thumbs;
 import com.mobaijun.model.WallpaperData;
 
 import java.io.IOException;
@@ -25,9 +26,34 @@ import java.util.stream.Collectors;
 public class FileUtils {
 
     private final static Path README_PATH = Paths.get("README.md");
-    private final static Path BING_PATH = Paths.get("wallpaper.md");
+    private final static Path WALLPAPER_PATH = Paths.get("wallpaper.md");
     private final static Path MONTH_PATH = Paths.get("picture/");
     private final static String REPO_URL = "[%s](https://github.com/april-projects/april-wallpaper/tree/main/picture/%s/) | ";
+
+    /**
+     * 读取 wallpaper.md
+     *
+     * @return WallpaperData 集合
+     * @throws IOException IOException
+     */
+    public static List<WallpaperData> readWallpaperData() throws IOException {
+        if (!Files.exists(WALLPAPER_PATH)) {
+            Files.createFile(WALLPAPER_PATH);
+        }
+        List<String> allLines = Files.readAllLines(WALLPAPER_PATH);
+        allLines = allLines.stream().filter(s -> !s.isEmpty()).collect(Collectors.toList());
+        List<WallpaperData> wallpaperDataList = new ArrayList<>();
+        for (int i = 1; i < allLines.size(); i++) {
+            String s = allLines.get(i).trim();
+            int descEnd = s.indexOf("]");
+            int urlStart = s.lastIndexOf("(") + 1;
+            String date = s.substring(0, 20);
+            String wallId = s.substring(s.lastIndexOf("[") + 1, descEnd);
+            String path = s.substring(urlStart, s.length() - 1);
+            wallpaperDataList.add(setWallpaper(wallId, date, path));
+        }
+        return wallpaperDataList;
+    }
 
     /**
      * 写入 wallpaper.md
@@ -36,16 +62,18 @@ public class FileUtils {
      * @throws IOException IOException
      */
     public static void writeWallpaper(List<WallpaperData> wallpaperDataList) throws IOException {
-        if (!Files.exists(BING_PATH)) {
-            Files.createFile(BING_PATH);
+        if (!Files.exists(WALLPAPER_PATH)) {
+            Files.createFile(WALLPAPER_PATH);
         }
-        Files.write(BING_PATH, "## Wallpaper".getBytes());
-        Files.write(BING_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
+        // 扫描本地文件
+        wallpaperDataList.addAll(readWallpaperData());
+        Files.write(WALLPAPER_PATH, "## Wallpaper".getBytes());
+        Files.write(WALLPAPER_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
         wallpaperDataList.forEach(wallpaperData -> {
             try {
-                Files.write(BING_PATH, wallpaperData.formatMarkdown().getBytes(), StandardOpenOption.APPEND);
-                Files.write(BING_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
-                Files.write(BING_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
+                Files.write(WALLPAPER_PATH, wallpaperData.formatMarkdown().getBytes(), StandardOpenOption.APPEND);
+                Files.write(WALLPAPER_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
+                Files.write(WALLPAPER_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
             } catch (IOException e) {
                 PrintUtils.print(e.getMessage(), "Failed to write wallpaper.md file");
             }
@@ -63,13 +91,14 @@ public class FileUtils {
             Files.createFile(README_PATH);
         }
         List<WallpaperData> imagesList = wallpaperDataList.subList(0, wallpaperDataList.size() - 1);
-        writeFile(README_PATH, imagesList, null);
+        // 写入 readme
+        writeFile(README_PATH, imagesList.subList(0, 24), null);
 
         Files.write(README_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
         // 归档
         Files.write(README_PATH, "### 历史归档：".getBytes(), StandardOpenOption.APPEND);
         Files.write(README_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
-        List<String> dateList = wallpaperDataList
+        List<String> dateList = imagesList
                 .stream()
                 .map(WallpaperData::getCreatedAt)
                 .map(date -> date.substring(0, 7))
@@ -157,5 +186,19 @@ public class FileUtils {
         if (i[0] % NumberConstant.THREE != 1) {
             Files.write(path, "|".getBytes(), StandardOpenOption.APPEND);
         }
+    }
+
+    /**
+     * 写入 wallpaper 数据
+     */
+    private static WallpaperData setWallpaper(String id, String date, String path) {
+        Thumbs thumbs = new Thumbs();
+        thumbs.setSmall(path);
+        WallpaperData wallpaperData = new WallpaperData();
+        wallpaperData.setCreatedAt(date);
+        wallpaperData.setThumbs(thumbs);
+        wallpaperData.setPath(path);
+        wallpaperData.setId(id);
+        return wallpaperData;
     }
 }
