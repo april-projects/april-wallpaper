@@ -2,6 +2,7 @@ package com.mobaijun.util;
 
 import com.mobaijun.common.util.PrintUtils;
 import com.mobaijun.common.util.constant.NumberConstant;
+import com.mobaijun.common.util.stream.StreamUtils;
 import com.mobaijun.model.Thumbs;
 import com.mobaijun.model.WallpaperData;
 
@@ -52,7 +53,7 @@ public class FileUtils {
             String path = s.substring(urlStart, s.length() - 1);
             wallpaperDataList.add(setWallpaper(wallId, date, path));
         }
-        return wallpaperDataList;
+        return StreamUtils.distinct(wallpaperDataList);
     }
 
     /**
