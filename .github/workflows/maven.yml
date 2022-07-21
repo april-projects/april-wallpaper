@@ -29,7 +29,7 @@ jobs:
          git config --local user.name "mobaijun"
          git pull
          git add .
-         git commit -m ":sparkles: update *.md"
+         git commit -m ":sparkles: update all markdown file"
     - name: Push changes
       uses:  ad-m/github-push-action@master
       with:
