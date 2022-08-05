@@ -135,7 +135,7 @@ public class FileUtils {
         });
         monthMap.keySet().forEach(s -> {
             Path path = MONTH_PATH.resolve(s);
-            if (!Files.exists(path)) {
+            if (Files.exists(path)) {
                 try {
                     Files.createDirectories(path);
                     path = path.resolve("README.md");
