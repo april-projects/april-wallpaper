@@ -1,9 +1,0 @@
-## Wallpaper (2018-09)
-![j558zp](https://th.wallhaven.cc/small/j5/j558zp.jpg) Today: [j558zp](https://th.wallhaven.cc/small/j5/j558zp.jpg)
-|      |      |      |
-| :----: | :----: | :----: |
-|![j558zp](https://th.wallhaven.cc/small/j5/j558zp.jpg)[j558zp download 4k](https://th.wallhaven.cc/small/j5/j558zp.jpg)|![j558zp](https://th.wallhaven.cc/small/j5/j558zp.jpg)[j558zp download 4k](https://th.wallhaven.cc/small/j5/j558zp.jpg)|![j558zp](https://th.wallhaven.cc/small/j5/j558zp.jpg)[j558zp download 4k](https://th.wallhaven.cc/small/j5/j558zp.jpg)|
-|![j558zp](https://th.wallhaven.cc/small/j5/j558zp.jpg)[j558zp download 4k](https://th.wallhaven.cc/small/j5/j558zp.jpg)|![j558zp](https://th.wallhaven.cc/small/j5/j558zp.jpg)[j558zp download 4k](https://th.wallhaven.cc/small/j5/j558zp.jpg)|![j558zp](https://th.wallhaven.cc/small/j5/j558zp.jpg)[j558zp download 4k](https://th.wallhaven.cc/small/j5/j558zp.jpg)|
-|![j558zp](https://th.wallhaven.cc/small/j5/j558zp.jpg)[j558zp download 4k](https://th.wallhaven.cc/small/j5/j558zp.jpg)|![j558zp](https://th.wallhaven.cc/small/j5/j558zp.jpg)[j558zp download 4k](https://th.wallhaven.cc/small/j5/j558zp.jpg)|![j558zp](https://th.wallhaven.cc/small/j5/j558zp.jpg)[j558zp download 4k](https://th.wallhaven.cc/small/j5/j558zp.jpg)|
-|![j558zp](https://th.wallhaven.cc/small/j5/j558zp.jpg)[j558zp download 4k](https://th.wallhaven.cc/small/j5/j558zp.jpg)|![j558zp](https://th.wallhaven.cc/small/j5/j558zp.jpg)[j558zp download 4k](https://th.wallhaven.cc/small/j5/j558zp.jpg)|![j558zp](https://th.wallhaven.cc/small/j5/j558zp.jpg)[j558zp download 4k](https://th.wallhaven.cc/small/j5/j558zp.jpg)|
-|![j558zp](https://th.wallhaven.cc/small/j5/j558zp.jpg)[j558zp download 4k](https://th.wallhaven.cc/small/j5/j558zp.jpg)|![j558zp](https://th.wallhaven.cc/small/j5/j558zp.jpg)[j558zp download 4k](https://th.wallhaven.cc/small/j5/j558zp.jpg)|

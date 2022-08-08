@@ -1,9 +1,0 @@
-## Wallpaper (2017-09)
-![gjkgz3](https://th.wallhaven.cc/small/gj/gjkgz3.jpg) Today: [gjkgz3](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)
-|      |      |      |
-| :----: | :----: | :----: |
-|![gjkgz3](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)[gjkgz3 download 4k](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)|![gjkgz3](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)[gjkgz3 download 4k](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)|![gjkgz3](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)[gjkgz3 download 4k](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)|
-|![gjkgz3](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)[gjkgz3 download 4k](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)|![gjkgz3](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)[gjkgz3 download 4k](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)|![gjkgz3](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)[gjkgz3 download 4k](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)|
-|![gjkgz3](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)[gjkgz3 download 4k](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)|![gjkgz3](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)[gjkgz3 download 4k](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)|![gjkgz3](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)[gjkgz3 download 4k](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)|
-|![gjkgz3](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)[gjkgz3 download 4k](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)|![gjkgz3](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)[gjkgz3 download 4k](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)|![gjkgz3](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)[gjkgz3 download 4k](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)|
-|![gjkgz3](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)[gjkgz3 download 4k](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)|![gjkgz3](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)[gjkgz3 download 4k](https://th.wallhaven.cc/small/gj/gjkgz3.jpg)|
