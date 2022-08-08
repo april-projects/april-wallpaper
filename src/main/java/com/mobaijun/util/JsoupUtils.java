@@ -1,8 +1,8 @@
 package com.mobaijun.util;
 
+import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.http.Header;
-import com.mobaijun.common.util.ObjectUtils;
-import com.mobaijun.common.util.PrintUtils;
+import cn.hutool.log.Log;
 import com.mobaijun.model.Images;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
@@ -23,6 +23,11 @@ import java.util.regex.Pattern;
  * @author MoBaiJun 2022/7/15 11:39
  */
 public class JsoupUtils {
+
+    /**
+     * tools log
+     */
+    private static final Log log = Log.get(JsoupUtils.class);
 
     /**
      * 报头
@@ -60,8 +65,8 @@ public class JsoupUtils {
                         Elements elements = document.get().getElementsByTag("img");
                         Images images = new Images();
                         elements.parallelStream()
-                                // 图片链接不能null
-                                .filter(e -> !ObjectUtils.isEmpty(e.getElementById("wallpaper")))
+                                // 图片链接不能 null
+                                .filter(e -> !ObjectUtil.isEmpty(e.getElementById("wallpaper")))
                                 .forEach(e -> {
                                     // 存储图片地址
                                     images.setImageUrl((e.attr("abs:src")));
@@ -70,9 +75,10 @@ public class JsoupUtils {
                                 });
                     });
         } catch (Exception e) {
-            PrintUtils.print(e.getMessage(), "image url get error");
+            log.error(e.getMessage(), "image url get error");
         }
-        PrintUtils.println(imagesList);
+        // 打印数据
+        imagesList.forEach(System.out::print);
         return imagesList;
     }
 

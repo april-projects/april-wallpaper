@@ -1,8 +1,8 @@
 package com.mobaijun.util;
 
-import com.mobaijun.common.util.PrintUtils;
-import com.mobaijun.common.util.constant.NumberConstant;
-import com.mobaijun.common.util.stream.StreamUtils;
+import cn.hutool.core.collection.CollUtil;
+import cn.hutool.log.Log;
+import com.mobaijun.enums.NumberEnums;
 import com.mobaijun.model.Thumbs;
 import com.mobaijun.model.WallpaperData;
 
@@ -25,6 +25,11 @@ import java.util.stream.Collectors;
  * @author MoBaiJun 2022/7/15 13:28
  */
 public class FileUtils {
+
+    /**
+     * tools log
+     */
+    private static final Log log = Log.get(FileUtils.class);
 
     private final static Path README_PATH = Paths.get("README.md");
     private final static Path WALLPAPER_PATH = Paths.get("wallpaper.md");
@@ -53,7 +58,7 @@ public class FileUtils {
             String path = s.substring(urlStart, s.length() - 1);
             wallpaperDataList.add(setWallpaper(wallId, date, path));
         }
-        return StreamUtils.distinct(wallpaperDataList);
+        return wallpaperDataList.stream().distinct().collect(Collectors.toList());
     }
 
     /**
@@ -67,7 +72,10 @@ public class FileUtils {
             Files.createFile(WALLPAPER_PATH);
         }
         // 扫描本地文件
-        wallpaperDataList.addAll(readWallpaperData());
+        List<WallpaperData> data = readWallpaperData();
+        if (CollUtil.isNotEmpty(data)) {
+            wallpaperDataList.addAll(data);
+        }
         Files.write(WALLPAPER_PATH, "## Wallpaper".getBytes());
         Files.write(WALLPAPER_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
         wallpaperDataList.forEach(wallpaperData -> {
@@ -76,7 +84,7 @@ public class FileUtils {
                 Files.write(WALLPAPER_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
                 Files.write(WALLPAPER_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
             } catch (IOException e) {
-                PrintUtils.print(e.getMessage(), "Failed to write wallpaper.md file");
+                log.error(e.getMessage(), "Failed to write wallpaper.md file");
             }
         });
     }
@@ -91,15 +99,14 @@ public class FileUtils {
         if (!Files.exists(README_PATH)) {
             Files.createFile(README_PATH);
         }
-        List<WallpaperData> imagesList = wallpaperDataList.subList(0, wallpaperDataList.size() - 1);
         // 写入 readme
-        writeFile(README_PATH, imagesList.subList(0, 24), null);
+        writeFile(README_PATH, wallpaperDataList.subList(0, 24), null);
 
         Files.write(README_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
         // 归档
         Files.write(README_PATH, "### 历史归档：".getBytes(), StandardOpenOption.APPEND);
         Files.write(README_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
-        List<String> dateList = imagesList
+        List<String> dateList = wallpaperDataList
                 .stream()
                 .map(WallpaperData::getCreatedAt)
                 .map(date -> date.substring(0, 7))
@@ -134,14 +141,22 @@ public class FileUtils {
             }
         });
         monthMap.keySet().forEach(s -> {
+            // 创建文件夹
             Path path = MONTH_PATH.resolve(s);
-            if (Files.exists(path)) {
+            if (!Files.exists(path)) {
                 try {
                     Files.createDirectories(path);
                     path = path.resolve("README.md");
                     writeFile(path, monthMap.get(s), s);
                 } catch (IOException e) {
-                    PrintUtils.print(e.getMessage(), "Failed to write README.MD file");
+                    log.error(e.getMessage(), "Failed to write README.MD file");
+                }
+            } else {
+                try {
+                    path = path.resolve("README.md");
+                    writeFile(path, monthMap.get(s), s);
+                } catch (IOException e) {
+                    log.error(e.getMessage(), "Failed to write README.MD file");
                 }
             }
         });
@@ -165,26 +180,26 @@ public class FileUtils {
         }
         Files.write(path, title.getBytes());
         Files.write(path, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
-        Files.write(path, wallpaperDataList.get(NumberConstant.ZERO).toLarge().getBytes(), StandardOpenOption.APPEND);
+        Files.write(path, wallpaperDataList.get(NumberEnums.ZERO.getCode()).toLarge().getBytes(), StandardOpenOption.APPEND);
         Files.write(path, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
         Files.write(path, "|      |      |      |".getBytes(), StandardOpenOption.APPEND);
         Files.write(path, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
         Files.write(path, "| :----: | :----: | :----: |".getBytes(), StandardOpenOption.APPEND);
         Files.write(path, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
-        final int[] i = {NumberConstant.ONE};
+        final int[] i = {NumberEnums.ONE.getCode()};
         wallpaperDataList.forEach(wallpaperData -> {
             try {
                 Files.write(path, ("|" + wallpaperData.toString()).getBytes(), StandardOpenOption.APPEND);
-                if (i[0] % NumberConstant.THREE == 0) {
+                if (i[0] % NumberEnums.THREE.getCode() == 0) {
                     Files.write(path, "|".getBytes(), StandardOpenOption.APPEND);
                     Files.write(path, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
                 }
                 i[0]++;
             } catch (IOException e) {
-                PrintUtils.print(e.getMessage(), "file write failed error");
+                log.error(e.getMessage(), "file write failed error");
             }
         });
-        if (i[0] % NumberConstant.THREE != 1) {
+        if (i[0] % NumberEnums.THREE.getCode() != 1) {
             Files.write(path, "|".getBytes(), StandardOpenOption.APPEND);
         }
     }
@@ -196,6 +211,7 @@ public class FileUtils {
         Thumbs thumbs = new Thumbs();
         thumbs.setSmall(path);
         WallpaperData wallpaperData = new WallpaperData();
+        wallpaperData.setUrl(path);
         wallpaperData.setCreatedAt(date);
         wallpaperData.setThumbs(thumbs);
         wallpaperData.setPath(path);

@@ -1,8 +1,5 @@
 package com.mobaijun.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * software：IntelliJ IDEA 2022.1
  * class name: WallpaperData
@@ -10,8 +7,6 @@ import lombok.Setter;
  *
  * @author MoBaiJun 2022/7/15 13:41
  */
-@Getter
-@Setter
 public class WallpaperData {
     private String id;
     private String url;
@@ -46,5 +41,53 @@ public class WallpaperData {
     @Override
     public String toString() {
         return String.format("![%s](%s)[%s download 4k](%s)", id, thumbs.getSmall(), id, url);
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getFileType() {
+        return fileType;
+    }
+
+    public void setFileType(String fileType) {
+        this.fileType = fileType;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public Thumbs getThumbs() {
+        return thumbs;
+    }
+
+    public void setThumbs(Thumbs thumbs) {
+        this.thumbs = thumbs;
     }
 }

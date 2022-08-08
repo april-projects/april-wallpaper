@@ -16,7 +16,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <kjs-common.version>1.0.8</kjs-common.version>
         <jsoup.version>1.15.2</jsoup.version>
         <compiler.version>3.1.0</compiler.version>
     </properties>
@@ -24,23 +23,9 @@
     <!--  工具类 -->
     <dependencies>
         <dependency>
-            <groupId>com.mobaijun</groupId>
-            <artifactId>kjs-common</artifactId>
-            <version>1.0.8</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.mapstruct</groupId>
-                    <artifactId>mapstruct</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.mapstruct</groupId>
-                    <artifactId>mapstruct-processor</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.apache.commons</groupId>
-                    <artifactId>commons-lang3</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.5</version>
         </dependency>
         <dependency>
             <groupId>org.jsoup</groupId>
