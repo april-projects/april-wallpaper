@@ -21,7 +21,7 @@ public class WallpaperData {
      * @return 字符串
      */
     public String formatMarkdown() {
-        return String.format("%s | [%s](%s) ", createdAt, id, thumbs.getSmall());
+        return String.format("%s | [%s download 4k](%s) | [thumbs](%s)", createdAt, id, url, thumbs.getSmall());
     }
 
     /**

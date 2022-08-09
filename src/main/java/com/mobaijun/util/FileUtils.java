@@ -30,7 +30,6 @@ public class FileUtils {
      * tools log
      */
     private static final Log log = Log.get(FileUtils.class);
-
     private final static Path README_PATH = Paths.get("README.md");
     private final static Path WALLPAPER_PATH = Paths.get("wallpaper.md");
     private final static Path MONTH_PATH = Paths.get("picture/");
@@ -51,12 +50,14 @@ public class FileUtils {
         List<WallpaperData> wallpaperDataList = new ArrayList<>();
         for (int i = 1; i < allLines.size(); i++) {
             String s = allLines.get(i).trim();
-            int descEnd = s.indexOf("]");
-            int urlStart = s.lastIndexOf("(") + 1;
-            String date = s.substring(0, 20);
-            String wallId = s.substring(s.lastIndexOf("[") + 1, descEnd);
-            String path = s.substring(urlStart, s.length() - 1);
-            wallpaperDataList.add(setWallpaper(wallId, date, path));
+            String date = s.substring(0, 19);
+            // 略缩图地址
+            String thumbs = getThumbs(s);
+            // 4K地址
+            String download4kUrl = getDownload4kUrl(s);
+            // Image Name
+            String wallId = getWallpaperId(s);
+            wallpaperDataList.add(setWallpaper(wallId, date, download4kUrl, thumbs));
         }
         return wallpaperDataList.stream().distinct().collect(Collectors.toList());
     }
@@ -106,12 +107,7 @@ public class FileUtils {
         // 归档
         Files.write(README_PATH, "### 历史归档：".getBytes(), StandardOpenOption.APPEND);
         Files.write(README_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
-        List<String> dateList = wallpaperDataList
-                .stream()
-                .map(WallpaperData::getCreatedAt)
-                .map(date -> date.substring(0, 7))
-                .distinct()
-                .collect(Collectors.toList());
+        List<String> dateList = wallpaperDataList.stream().map(WallpaperData::getCreatedAt).map(date -> date.substring(0, 7)).distinct().collect(Collectors.toList());
         int i = 0;
         for (String date : dateList) {
             String link = String.format(REPO_URL, date, date);
@@ -207,15 +203,46 @@ public class FileUtils {
     /**
      * 写入 wallpaper 数据
      */
-    private static WallpaperData setWallpaper(String id, String date, String path) {
+    private static WallpaperData setWallpaper(String id, String date, String url, String path) {
         Thumbs thumbs = new Thumbs();
         thumbs.setSmall(path);
         WallpaperData wallpaperData = new WallpaperData();
-        wallpaperData.setUrl(path);
+        wallpaperData.setUrl(url);
         wallpaperData.setCreatedAt(date);
         wallpaperData.setThumbs(thumbs);
         wallpaperData.setPath(path);
         wallpaperData.setId(id);
         return wallpaperData;
+    }
+
+    /**
+     * 截取字符获取指定链接
+     *
+     * @param url 字符串
+     * @return url
+     */
+    private static String getDownload4kUrl(String url) {
+        String index = url.substring(url.indexOf("]") - 2);
+        return index.substring(4, index.lastIndexOf("|") - 2);
+    }
+
+    /**
+     * 获取 wallpaper id
+     *
+     * @param url 字符串
+     * @return url
+     */
+    private static String getWallpaperId(String url) {
+        return url.substring(url.lastIndexOf("/") + 1, url.length() - 5);
+    }
+
+    /**
+     * 获取略缩图
+     *
+     * @param url 字符串
+     * @return url
+     */
+    private static String getThumbs(String url) {
+        return url.substring(url.lastIndexOf("]") + 2, url.length() - 1);
     }
 }
