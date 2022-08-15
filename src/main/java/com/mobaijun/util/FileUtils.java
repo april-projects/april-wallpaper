@@ -12,6 +12,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -77,9 +78,13 @@ public class FileUtils {
         if (CollUtil.isNotEmpty(data)) {
             wallpaperDataList.addAll(data);
         }
+        // 排序
+        List<WallpaperData> collect = wallpaperDataList.stream()
+                .sorted(Comparator.comparing(WallpaperData::getCreatedAt))
+                .collect(Collectors.toList());
         Files.write(WALLPAPER_PATH, "## Wallpaper".getBytes());
         Files.write(WALLPAPER_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
-        wallpaperDataList.forEach(wallpaperData -> {
+        collect.forEach(wallpaperData -> {
             try {
                 Files.write(WALLPAPER_PATH, wallpaperData.formatMarkdown().getBytes(), StandardOpenOption.APPEND);
                 Files.write(WALLPAPER_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
