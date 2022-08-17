@@ -80,7 +80,8 @@ public class FileUtils {
         }
         // 排序
         List<WallpaperData> collect = wallpaperDataList.stream()
-                .sorted(Comparator.comparing(WallpaperData::getCreatedAt))
+                // 倒序,最新日期排前面
+                .sorted(Comparator.comparing(WallpaperData::getCreatedAt).reversed())
                 .collect(Collectors.toList());
         Files.write(WALLPAPER_PATH, "## Wallpaper".getBytes());
         Files.write(WALLPAPER_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
