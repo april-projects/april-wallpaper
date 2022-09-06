@@ -113,7 +113,15 @@ public class FileUtils {
         // 归档
         Files.write(README_PATH, "### 历史归档：".getBytes(), StandardOpenOption.APPEND);
         Files.write(README_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
-        List<String> dateList = wallpaperDataList.stream().map(WallpaperData::getCreatedAt).map(date -> date.substring(0, 7)).distinct().collect(Collectors.toList());
+        List<String> dateList = wallpaperDataList.stream()
+                .map(WallpaperData::getCreatedAt)
+                // 截取日期
+                .map(date -> date.substring(0, 7))
+                // 去重
+                .distinct()
+                // 倒叙
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
         int i = 0;
         for (String date : dateList) {
             String link = String.format(REPO_URL, date, date);
