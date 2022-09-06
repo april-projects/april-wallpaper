@@ -14,8 +14,10 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 /**
@@ -81,11 +83,11 @@ public class FileUtils {
         // 排序
         List<WallpaperData> collect = wallpaperDataList.stream()
                 // 倒序,最新日期排前面
-                .sorted(Comparator.comparing(WallpaperData::getCreatedAt).reversed())
-                .collect(Collectors.toList());
+                .sorted(Comparator.comparing(WallpaperData::getCreatedAt).reversed()).collect(Collectors.toList());
         Files.write(WALLPAPER_PATH, "## Wallpaper".getBytes());
         Files.write(WALLPAPER_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
-        collect.forEach(wallpaperData -> {
+        List<WallpaperData> distinct = wallpaperDataListDistinct(collect);
+        distinct.forEach(wallpaperData -> {
             try {
                 Files.write(WALLPAPER_PATH, wallpaperData.formatMarkdown().getBytes(), StandardOpenOption.APPEND);
                 Files.write(WALLPAPER_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
@@ -113,15 +115,13 @@ public class FileUtils {
         // 归档
         Files.write(README_PATH, "### 历史归档：".getBytes(), StandardOpenOption.APPEND);
         Files.write(README_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
-        List<String> dateList = wallpaperDataList.stream()
-                .map(WallpaperData::getCreatedAt)
+        List<String> dateList = wallpaperDataList.stream().map(WallpaperData::getCreatedAt)
                 // 截取日期
                 .map(date -> date.substring(0, 7))
                 // 去重
                 .distinct()
                 // 倒叙
-                .sorted(Comparator.reverseOrder())
-                .collect(Collectors.toList());
+                .sorted(Comparator.reverseOrder()).collect(Collectors.toList());
         int i = 0;
         for (String date : dateList) {
             String link = String.format(REPO_URL, date, date);
@@ -258,5 +258,18 @@ public class FileUtils {
      */
     private static String getThumbs(String url) {
         return url.substring(url.lastIndexOf("]") + 2, url.length() - 1);
+    }
+
+    /**
+     * 按照集合id去重
+     *
+     * @param data 属性集合
+     * @return 去重集合
+     */
+    private static List<WallpaperData> wallpaperDataListDistinct(List<WallpaperData> data) {
+        return data.stream().collect(Collectors
+                // double deduplication tmd
+                .collectingAndThen(Collectors.toCollection(() -> new TreeSet<>(Comparator
+                        .comparing(WallpaperData::getId))), LinkedList::new));
     }
 }
