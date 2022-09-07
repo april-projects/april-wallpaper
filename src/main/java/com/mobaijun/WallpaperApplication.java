@@ -27,9 +27,9 @@ public class WallpaperApplication {
     private static final String PAGE_API = WALLPAPER_API + "&page=" + Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
 
     public static void main(String[] args) throws IOException {
-        List<WallpaperData> wallpaperList = JsonUtils.getWallpaperList(PAGE_API);
-        FileUtils.writeWallpaper(wallpaperList);
-        FileUtils.writeReadme(wallpaperList);
-        FileUtils.writeMonthInfo(wallpaperList);
+        // Get a list of processed image collections
+        List<WallpaperData> wallpaperData = FileUtils.writeWallpaper(JsonUtils.getWallpaperList(PAGE_API));
+        FileUtils.writeReadme(wallpaperData);
+        FileUtils.writeMonthInfo(wallpaperData);
     }
 }

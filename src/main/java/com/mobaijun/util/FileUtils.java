@@ -71,7 +71,7 @@ public class FileUtils {
      * @param wallpaperDataList 图片集合
      * @throws IOException IOException
      */
-    public static void writeWallpaper(List<WallpaperData> wallpaperDataList) throws IOException {
+    public static List<WallpaperData> writeWallpaper(List<WallpaperData> wallpaperDataList) throws IOException {
         if (!Files.exists(WALLPAPER_PATH)) {
             Files.createFile(WALLPAPER_PATH);
         }
@@ -80,14 +80,16 @@ public class FileUtils {
         if (CollUtil.isNotEmpty(data)) {
             wallpaperDataList.addAll(data);
         }
-        // 排序
-        List<WallpaperData> collect = wallpaperDataList.stream()
-                // 倒序,最新日期排前面
-                .sorted(Comparator.comparing(WallpaperData::getCreatedAt).reversed()).collect(Collectors.toList());
         Files.write(WALLPAPER_PATH, "## Wallpaper".getBytes());
         Files.write(WALLPAPER_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
-        List<WallpaperData> distinct = wallpaperDataListDistinct(collect);
-        distinct.forEach(wallpaperData -> {
+        // 去重
+        wallpaperDataList = wallpaperDataListDistinct(wallpaperDataList);
+        // 排序
+        wallpaperDataList = wallpaperDataList.stream()
+                // 倒序,最新日期排前面
+                .sorted(Comparator.comparing(WallpaperData::getCreatedAt).reversed())
+                .collect(Collectors.toList());
+        wallpaperDataList.forEach(wallpaperData -> {
             try {
                 Files.write(WALLPAPER_PATH, wallpaperData.formatMarkdown().getBytes(), StandardOpenOption.APPEND);
                 Files.write(WALLPAPER_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
@@ -96,6 +98,7 @@ public class FileUtils {
                 log.error(e.getMessage(), "Failed to write wallpaper.md file");
             }
         });
+        return wallpaperDataList;
     }
 
     /**
