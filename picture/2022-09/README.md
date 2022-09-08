@@ -1,5 +1,5 @@
 ## Wallpaper (2022-09)
-![x8x7dz](https://w.wallhaven.cc/full/x8/wallhaven-x8x7dz.jpg) Today: [x8x7dz](https://th.wallhaven.cc/small/x8/x8x7dz.jpg)
+![x8x7dz](https://th.wallhaven.cc/small/x8/x8x7dz.jpg) Today: [x8x7dz](https://th.wallhaven.cc/small/x8/x8x7dz.jpg)
 |      |      |      |
 | :----: | :----: | :----: |
 |![x8x7dz](https://th.wallhaven.cc/small/x8/x8x7dz.jpg)[x8x7dz download 4k](https://wallhaven.cc/w/x8x7dz)|![rdvyjw](https://th.wallhaven.cc/small/rd/rdvyjw.jpg)[rdvyjw download 4k](https://wallhaven.cc/w/rdvyjw)|![6o9mj6](https://th.wallhaven.cc/small/6o/6o9mj6.jpg)[6o9mj6 download 4k](https://wallhaven.cc/w/6o9mj6)|
