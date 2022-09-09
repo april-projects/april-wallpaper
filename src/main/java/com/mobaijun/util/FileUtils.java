@@ -71,7 +71,7 @@ public class FileUtils {
      * @param wallpaperDataList 图片集合
      * @throws IOException IOException
      */
-    public static List<WallpaperData> writeWallpaper(List<WallpaperData> wallpaperDataList) throws IOException {
+    public static void writeWallpaper(List<WallpaperData> wallpaperDataList) throws IOException {
         if (!Files.exists(WALLPAPER_PATH)) {
             Files.createFile(WALLPAPER_PATH);
         }
@@ -98,7 +98,6 @@ public class FileUtils {
                 log.error(e.getMessage(), "Failed to write wallpaper.md file");
             }
         });
-        return wallpaperDataList;
     }
 
     /**

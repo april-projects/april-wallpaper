@@ -28,7 +28,8 @@ public class WallpaperApplication {
 
     public static void main(String[] args) throws IOException {
         // Get a list of processed image collections
-        List<WallpaperData> wallpaperData = FileUtils.writeWallpaper(JsonUtils.getWallpaperList(PAGE_API));
+        List<WallpaperData> wallpaperData = JsonUtils.getWallpaperList(PAGE_API);
+        FileUtils.writeWallpaper(wallpaperData);
         FileUtils.writeReadme(wallpaperData);
         FileUtils.writeMonthInfo(wallpaperData);
     }
