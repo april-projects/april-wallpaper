@@ -12,6 +12,10 @@ public class WallpaperData {
     private String url;
     private String fileType;
     private String createdAt;
+    /**
+     * 尺寸
+     */
+    private String resolution;
     private String path;
     private Thumbs thumbs;
 
@@ -89,5 +93,13 @@ public class WallpaperData {
 
     public void setThumbs(Thumbs thumbs) {
         this.thumbs = thumbs;
+    }
+
+    public String getResolution() {
+        return resolution;
+    }
+
+    public void setResolution(String resolution) {
+        this.resolution = resolution;
     }
 }

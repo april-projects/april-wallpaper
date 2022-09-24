@@ -20,7 +20,7 @@ public class WallpaperApplication {
     /**
      * <a href="https://wallhaven.cc/help/api">WALLPAPER_API</a>
      */
-    private static final String WALLPAPER_API = "https://wallhaven.cc/api/v1/search?sorting=toplist&atleast=1920x1080&ref=fp";
+    private static final String WALLPAPER_API = "https://wallhaven.cc/api/v1/search?sorting=toplist&atleast=1920x1080&ref=fp&atleast=1920x1080&ratios=16x9";
     /**
      * 当前日期作为分页参数
      */

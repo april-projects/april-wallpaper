@@ -62,7 +62,10 @@ public class FileUtils {
             String wallId = getWallpaperId(s);
             wallpaperDataList.add(setWallpaper(wallId, date, download4kUrl, thumbs));
         }
-        return wallpaperDataList.stream().distinct().collect(Collectors.toList());
+        return wallpaperDataList
+                .stream()
+                .distinct()
+                .collect(Collectors.toList());
     }
 
     /**
