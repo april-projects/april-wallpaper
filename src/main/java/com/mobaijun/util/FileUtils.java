@@ -285,7 +285,9 @@ public class FileUtils {
      */
     public static void determineSizeFile() {
         long size = FileUtil.size(WALLPAPER_PATH.toFile(), false);
-        if (size >= 500000) {
+        long fileMaxSize = 500000;
+        // 500 KB
+        if (size >= fileMaxSize) {
             FileUtil.rename(WALLPAPER_PATH.toFile(), DateUtil.today() + "-" + WALLPAPER_PATH.toFile().getName(), true);
         }
     }
