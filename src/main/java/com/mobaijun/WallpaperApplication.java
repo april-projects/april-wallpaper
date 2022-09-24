@@ -32,5 +32,6 @@ public class WallpaperApplication {
         FileUtils.writeWallpaper(wallpaperData);
         FileUtils.writeReadme(wallpaperData);
         FileUtils.writeMonthInfo(wallpaperData);
+        FileUtils.determineSizeFile();
     }
 }

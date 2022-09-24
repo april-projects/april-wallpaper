@@ -1,6 +1,8 @@
 package com.mobaijun.util;
 
 import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.io.FileUtil;
 import cn.hutool.log.Log;
 import com.mobaijun.enums.NumberEnums;
 import com.mobaijun.model.Thumbs;
@@ -276,5 +278,15 @@ public class FileUtils {
                 // double deduplication tmd
                 .collectingAndThen(Collectors.toCollection(() -> new TreeSet<>(Comparator
                         .comparing(WallpaperData::getId))), LinkedList::new));
+    }
+
+    /**
+     * 判断文件是否超过指定大小，超过重命名并创建新文件
+     */
+    public static void determineSizeFile() {
+        long size = FileUtil.size(WALLPAPER_PATH.toFile(), false);
+        if (size >= 500000) {
+            FileUtil.rename(WALLPAPER_PATH.toFile(), DateUtil.today() + "-" + WALLPAPER_PATH.toFile().getName(), true);
+        }
     }
 }
