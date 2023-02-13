@@ -1,7 +1,6 @@
 package com.mobaijun.util;
 
 import cn.hutool.core.collection.CollUtil;
-import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.log.Log;
 import com.mobaijun.enums.NumberEnums;
@@ -13,6 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
@@ -288,7 +288,7 @@ public class FileUtils {
         long fileMaxSize = 500000;
         // 500 KB
         if (size >= fileMaxSize) {
-            FileUtil.rename(WALLPAPER_PATH.toFile(), DateUtil.today() + "-" + WALLPAPER_PATH.toFile().getName(), true);
+            FileUtil.rename(WALLPAPER_PATH.toFile(), LocalDateTime.now().getMonth() + "-" + WALLPAPER_PATH.toFile().getName(), true);
             FileUtil.file(WALLPAPER_PATH.toFile());
         }
     }
