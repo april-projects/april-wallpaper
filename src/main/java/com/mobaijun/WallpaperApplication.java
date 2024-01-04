@@ -1,10 +1,14 @@
 package com.mobaijun;
 
+import cn.hutool.core.io.FileUtil;
+import cn.hutool.json.JSONUtil;
 import com.mobaijun.model.WallpaperData;
 import com.mobaijun.util.FileUtils;
 import com.mobaijun.util.JsonUtils;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
 import java.util.Calendar;
 import java.util.List;
 
@@ -33,5 +37,22 @@ public class WallpaperApplication {
         FileUtils.writeReadme(wallpaperData);
         FileUtils.writeMonthInfo(wallpaperData);
         FileUtils.determineSizeFile();
+        // 写入到 json
+        writeJsonFile(wallpaperData);
+    }
+
+    /**
+     * 配置 json api
+     *
+     * @param wallpaperData 地址列表
+     */
+    private static void writeJsonFile(List<WallpaperData> wallpaperData) {
+        // 写入url到json
+        List<String> collect = wallpaperData
+                .stream()
+                .map(WallpaperData::getPath)
+                .toList();
+        String entries = JSONUtil.toJsonStr(collect);
+        FileUtil.writeString(entries, Path.of("api.json").toFile(), StandardCharsets.UTF_8);
     }
 }
