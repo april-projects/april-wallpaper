@@ -128,7 +128,7 @@ public class FileUtils {
                 // 去重
                 .distinct()
                 // 倒叙
-                .sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+                .sorted(Comparator.reverseOrder()).toList();
         int i = 0;
         for (String date : dateList) {
             String link = String.format(REPO_URL, date, date);
