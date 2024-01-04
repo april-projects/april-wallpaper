@@ -4,6 +4,7 @@
 name: Java CI with Maven
 
 on:
+  workflow_dispatch:
   schedule:
     # * is a special character in YAML, so you have to quote this string
     - cron:  '0 0 * * *'
@@ -31,6 +32,7 @@ jobs:
          git add README.md
          git add wallpaper.md
          git add picture/*
+         git add api.json
          git commit -m ":sparkles: update today wallpaper"
     - name: Push changes
       uses:  ad-m/github-push-action@master
