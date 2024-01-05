@@ -31,7 +31,8 @@ public class JsonUtils {
     public static List<WallpaperData> getWallpaperList(String api) {
         log.info("当前请求 api 地址：{}", api);
         // 返回 json 字符串
-        String jsonStr = HttpUtil.get(api);
+        //String jsonStr = HttpUtil.createGet(api).setHttpProxy("127.0.0.1", 10809).execute().body();
+        String jsonStr = HttpUtil.createGet(api).execute().body();
         JSONArray jsonArray = JSONUtil.parseObj(jsonStr).getJSONArray("data");
         return JSONUtil.toList(jsonArray, WallpaperData.class);
     }

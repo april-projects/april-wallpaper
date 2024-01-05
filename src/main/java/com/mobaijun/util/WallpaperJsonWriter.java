@@ -6,9 +6,9 @@ import cn.hutool.log.Log;
 import com.mobaijun.model.WallpaperData;
 
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Description: [json 工具类]
@@ -35,13 +35,13 @@ public class WallpaperJsonWriter {
                     .limit(24)
                     .map(WallpaperData::getPath)
                     .toList();
+            Path path = Paths.get(JSON_FILE_PATH);
             if (existingJsonEntries.isEmpty()) {
-                FileUtil.writeString(JSONUtil.toJsonStr(newEntries), Paths.get(JSON_FILE_PATH).toFile(), StandardCharsets.UTF_8);
+                FileUtil.writeString(JSONUtil.toJsonStr(newEntries), path.toFile(), StandardCharsets.UTF_8);
             } else {
                 // 去重并写入JSON文件
-                List<String> uniqueEntries = newEntries.stream().distinct().collect(Collectors.toList());
                 existingJsonEntries.addAll(newEntries);
-                FileUtil.writeString(JSONUtil.toJsonStr(uniqueEntries), Paths.get(JSON_FILE_PATH).toFile(), StandardCharsets.UTF_8);
+                FileUtil.writeString(JSONUtil.toJsonStr(existingJsonEntries), path.toFile(), StandardCharsets.UTF_8);
             }
         } catch (Exception e) {
             log.error("文件写入异常，请定位：", e);
