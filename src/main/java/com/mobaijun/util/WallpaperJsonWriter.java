@@ -41,7 +41,8 @@ public class WallpaperJsonWriter {
             } else {
                 // 去重并写入JSON文件
                 existingJsonEntries.addAll(newEntries);
-                FileUtil.writeString(JSONUtil.toJsonStr(existingJsonEntries), path.toFile(), StandardCharsets.UTF_8);
+                List<String> distinctList = existingJsonEntries.stream().distinct().toList();
+                FileUtil.writeString(JSONUtil.toJsonStr(distinctList), path.toFile(), StandardCharsets.UTF_8);
             }
         } catch (Exception e) {
             log.error("文件写入异常，请定位：", e);

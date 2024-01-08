@@ -51,7 +51,7 @@ public class FileUtils {
             Files.createFile(WALLPAPER_PATH);
         }
         List<String> allLines = Files.readAllLines(WALLPAPER_PATH);
-        allLines = allLines.stream().filter(s -> !s.isEmpty()).collect(Collectors.toList());
+        allLines = allLines.stream().filter(s -> !s.isEmpty()).toList();
         List<WallpaperData> wallpaperDataList = new ArrayList<>();
         for (int i = 1; i < allLines.size(); i++) {
             String s = allLines.get(i).trim();
