@@ -6,7 +6,6 @@ import cn.hutool.log.Log;
 import com.mobaijun.enums.NumberEnums;
 import com.mobaijun.model.Thumbs;
 import com.mobaijun.model.WallpaperData;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -138,6 +137,10 @@ public class FileUtils {
                 Files.write(README_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
             }
         }
+        // 写入cdn 地址
+        Files.write(README_PATH, (System.lineSeparator() + "---").getBytes(), StandardOpenOption.APPEND);
+        Files.write(README_PATH, (System.lineSeparator() + "[Jsdelivr CDN](https://cdn.jsdelivr.net/gh/april-projects/april-wallpaper/api.json)").getBytes(), StandardOpenOption.APPEND);
+        Files.write(README_PATH, (System.lineSeparator() + "[statically CDN](https://cdn.statically.io/gh/april-projects/april-wallpaper/main/api.json)").getBytes(), StandardOpenOption.APPEND);
     }
 
     /**

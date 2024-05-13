@@ -5,7 +5,6 @@ import com.mobaijun.model.WallpaperData;
 import com.mobaijun.util.FileUtils;
 import com.mobaijun.util.JsonUtils;
 import com.mobaijun.util.WallpaperJsonWriter;
-
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.List;
@@ -31,7 +30,7 @@ public class WallpaperApplication {
 
     public static void main(String[] args) throws IOException {
         // Get a list of processed image collections
-        List<WallpaperData> wallpaperData = JsonUtils.getWallpaperList(PAGE_API);
+        List<WallpaperData> wallpaperData = JsonUtils.getWallpaperList(PAGE_API, true);
         FileUtils.writeWallpaper(wallpaperData);
         FileUtils.writeReadme(wallpaperData);
         FileUtils.writeMonthInfo(wallpaperData);
