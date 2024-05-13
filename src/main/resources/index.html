@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Wallpaper Gallery</title>
+    <link href="https://www.mobaijun.com/favicon.png" rel="icon" type="image/png">
+    <link href="./static/css/styles.css" rel="stylesheet">
+    <style>
+        /* 响应式设计 */
+        @media screen and (max-width: 768px) {
+            /* 在小屏幕上，顶部和底部导航栏的字体大小调整为更适合的尺寸 */
+            .top-bar, .bottom-bar {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- 顶部导航栏 -->
+<div class="top-bar">
+    Wallpaper Gallery
+</div>
+
+<!-- 页面内容 -->
+<div class="page-content">
+    <div class="thumbnail-container" id="thumbnail-container">
+        <!-- Thumbnails will be dynamically loaded here -->
+    </div>
+
+    <div class="full-image-container" id="full-image-container" style="display: none;">
+        <!-- Full image will be dynamically loaded here -->
+    </div>
+</div>
+
+<!-- 底部导航栏 -->
+<div class="bottom-bar">
+    <div class="copyright">
+        <!-- 修改作者信息为超链接 -->
+        &copy; 2024 <a href="https://github.com/april-projects" style="color: #10a309;">April</a>. All rights reserved.
+    </div>
+</div>
+
+<script src="./static/js/script.js"></script>
+</body>
+</html>

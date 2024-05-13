@@ -1,0 +1,135 @@
+/* 缩略图容器 */
+.thumbnail-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 1; /* 保证缩略图容器位于顶部横条之下 */
+}
+
+.thumbnail {
+    width: 500px;
+    height: 300px;
+    margin: 10px;
+    /* 缩略图的背景颜色 */
+    background-color: #f0f0f0;
+    cursor: pointer;
+    /* 超出部分隐藏 */
+    overflow: hidden;
+    /* 设置相对定位 */
+    position: relative;
+    z-index: 1; /* 保证缩略图位于顶部横条之下 */
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    /* 图片填充整个容器 */
+    object-fit: cover;
+    /* 添加过渡效果 */
+    transition: transform 0.3s ease;
+    z-index: 0; /* 图片位于层叠顺序的底部 */
+}
+
+.thumbnail:hover img {
+    /* 鼠标悬停时放大 */
+    transform: scale(1.1);
+}
+
+.thumbnail .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 半透明黑色蒙版 */
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    /* 默认隐藏蒙版 */
+    opacity: 0;
+    /* 添加过渡效果 */
+    transition: opacity 0.3s ease;
+}
+
+.thumbnail:hover .mask {
+    /* 鼠标悬停时显示蒙版 */
+    opacity: 1;
+}
+
+.full-image-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 半透明黑色背景 */
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 确保全图显示在顶层 */
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.full-image-container img {
+    /* 图片最大宽度为屏幕宽度的90% */
+    max-width: 90%;
+    /* 图片最大高度为屏幕高度的90% */
+    max-height: 90%;
+    /* 图片完整显示 */
+    object-fit: contain;
+}
+
+/* 页面内容 */
+.page-content {
+    margin-top: 40px; /* 与顶部横条高度相同的上边距 */
+    padding-top: 20px; /* 额外的内边距，确保内容不被顶部横条遮挡 */
+}
+
+/* 顶部横条 */
+.top-bar {
+    /* 固定定位 */
+    position: fixed;
+    /* 距离顶部为0 */
+    top: 0;
+    /* 距离左侧为0 */
+    left: 0;
+    /* 宽度100% */
+    width: 100%;
+    /* 渐变色背景 */
+    background: linear-gradient(to right, #4CAF50, #2196F3);
+    /* 字体颜色 */
+    color: white;
+    /* 文本居中 */
+    text-align: center;
+    /* 上下内边距 */
+    padding: 10px 0;
+    /* 确保位于顶层 */
+    z-index: 9999;
+}
+
+/* 底部横条 */
+.bottom-bar {
+    /* 固定定位 */
+    position: fixed;
+    /* 距离底部为0 */
+    bottom: 0;
+    /* 距离左侧为0 */
+    left: 0;
+    /* 宽度100% */
+    width: 100%;
+    /* 背景色 */
+    background-color: #333;
+    /* 字体颜色 */
+    color: white;
+    /* 文本居中 */
+    text-align: center;
+    /* 上下内边距 */
+    padding: 10px 0;
+    /* 确保位于顶层 */
+    z-index: 9999;
+}
