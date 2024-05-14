@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (loading) return;
         loading = true;
         // 构造请求 URL
-        const url = `http://localhost:3000?page=${currentPage}&pageSize=${pageSize}`;
+        const url = `https://api.mobaijun.com/api/wallpaper?page=${currentPage}&pageSize=${pageSize}`;
         // 发起请求获取数据
         makeRequest(url, function (error, data) {
             if (error) {
