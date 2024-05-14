@@ -1,18 +1,17 @@
-// 当文档内容加载完成后执行以下代码
 document.addEventListener("DOMContentLoaded", function () {
-    // 标识是否正在加载图片
     let loading = false;
+    let currentPage = 1;
+    // 每页显示的缩略图数量
+    const pageSize = 9;
 
-    // 发起网络请求函数
+    // 发起 XMLHttpRequest 请求获取数据
     function makeRequest(url, callback) {
         const xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status === 200) {
-                    // 请求成功时执行回调函数，传入数据
                     callback(null, JSON.parse(xhr.responseText));
                 } else {
-                    // 请求失败时执行回调函数，传入错误信息
                     callback(new Error("Failed to fetch data"));
                 }
             }
@@ -29,7 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const thumbnail = document.createElement("div");
             thumbnail.className = "thumbnail";
             const img = new Image();
-            img.src = thumbnailUrl;
+            // 存储真实图片 URL
+            img.dataset.src = thumbnailUrl;
             thumbnail.appendChild(img);
             container.appendChild(thumbnail);
             // 添加点击事件监听器，显示对应的大图
@@ -76,14 +76,18 @@ document.addEventListener("DOMContentLoaded", function () {
     function loadNextImages() {
         if (loading) return;
         loading = true;
-        // 发起请求获取图片数据
-        makeRequest("https://cdn.jsdelivr.net/gh/april-projects/april-wallpaper/api.json", function (error, data) {
+        // 构造请求 URL
+        const url = `http://localhost:3000?page=${currentPage}&pageSize=${pageSize}`;
+        // 发起请求获取数据
+        makeRequest(url, function (error, data) {
             if (error) {
                 console.error(error);
             } else {
                 // 加载缩略图
                 loadThumbnails(data);
                 loading = false;
+                // 加载下一页
+                currentPage++;
             }
         });
     }
@@ -94,6 +98,15 @@ document.addEventListener("DOMContentLoaded", function () {
         if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - (window.innerHeight / 2))) {
             loadNextImages();
         }
+
+        // 图片懒加载
+        const lazyImages = document.querySelectorAll('.thumbnail img[data-src]');
+        lazyImages.forEach(function (lazyImage) {
+            if (lazyImage.offsetTop < window.innerHeight + window.scrollY) {
+                lazyImage.src = lazyImage.dataset.src;
+                lazyImage.removeAttribute('data-src');
+            }
+        });
     });
 
     // 初始化加载第一页图片
