@@ -1,9 +1,8 @@
 ## Wallpaper (2024-06)
-![m3e5l1](https://w.wallhaven.cc/full/m3/wallhaven-m3e5l1.png) Today: [m3e5l1](https://th.wallhaven.cc/small/m3/m3e5l1.jpg)
+![p9zdjj](https://w.wallhaven.cc/full/p9/wallhaven-p9zdjj.png) Today: [p9zdjj](https://th.wallhaven.cc/small/p9/p9zdjj.jpg)
 |      |      |      |
 | :----: | :----: | :----: |
-|![m3e5l1](https://th.wallhaven.cc/small/m3/m3e5l1.jpg)[m3e5l1 download 4k](https://wallhaven.cc/w/m3e5l1)|![yxo6yl](https://th.wallhaven.cc/small/yx/yxo6yl.jpg)[yxo6yl download 4k](https://wallhaven.cc/w/yxo6yl)|![zy6jdj](https://th.wallhaven.cc/small/zy/zy6jdj.jpg)[zy6jdj download 4k](https://wallhaven.cc/w/zy6jdj)|
-|![jx7oyy](https://th.wallhaven.cc/small/jx/jx7oyy.jpg)[jx7oyy download 4k](https://wallhaven.cc/w/jx7oyy)|![9dp158](https://th.wallhaven.cc/small/9d/9dp158.jpg)[9dp158 download 4k](https://wallhaven.cc/w/9dp158)|![9dp158](https://th.wallhaven.cc/small/9d/9dp158.jpg)[9dp158 download 4k](https://wallhaven.cc/w/9dp158)|
+|![p9zdjj](https://th.wallhaven.cc/small/p9/p9zdjj.jpg)[p9zdjj download 4k](https://wallhaven.cc/w/p9zdjj)|![vqlj2m](https://th.wallhaven.cc/small/vq/vqlj2m.jpg)[vqlj2m download 4k](https://wallhaven.cc/w/vqlj2m)|![9dp158](https://th.wallhaven.cc/small/9d/9dp158.jpg)[9dp158 download 4k](https://wallhaven.cc/w/9dp158)|
 |![1py5j1](https://th.wallhaven.cc/small/1p/1py5j1.jpg)[1py5j1 download 4k](https://wallhaven.cc/w/1py5j1)|![kx5o91](https://th.wallhaven.cc/small/kx/kx5o91.jpg)[kx5o91 download 4k](https://wallhaven.cc/w/kx5o91)|![l8p11r](https://th.wallhaven.cc/small/l8/l8p11r.jpg)[l8p11r download 4k](https://wallhaven.cc/w/l8p11r)|
 |![vql665](https://th.wallhaven.cc/small/vq/vql665.jpg)[vql665 download 4k](https://wallhaven.cc/w/vql665)|![2ylqq9](https://th.wallhaven.cc/small/2y/2ylqq9.jpg)[2ylqq9 download 4k](https://wallhaven.cc/w/2ylqq9)|![x6gm3o](https://th.wallhaven.cc/small/x6/x6gm3o.jpg)[x6gm3o download 4k](https://wallhaven.cc/w/x6gm3o)|
 |![6d6rg7](https://th.wallhaven.cc/small/6d/6d6rg7.jpg)[6d6rg7 download 4k](https://wallhaven.cc/w/6d6rg7)|![vql63m](https://th.wallhaven.cc/small/vq/vql63m.jpg)[vql63m download 4k](https://wallhaven.cc/w/vql63m)|![3lj15d](https://th.wallhaven.cc/small/3l/3lj15d.jpg)[3lj15d download 4k](https://wallhaven.cc/w/3lj15d)|
