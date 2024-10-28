@@ -1,9 +1,8 @@
 ## Wallpaper (2024-09)
-![vq6w75](https://w.wallhaven.cc/full/vq/wallhaven-vq6w75.png) Today: [vq6w75](https://th.wallhaven.cc/small/vq/vq6w75.jpg)
+![yxpyzk](https://w.wallhaven.cc/full/yx/wallhaven-yxpyzk.png) Today: [yxpyzk](https://th.wallhaven.cc/small/yx/yxpyzk.jpg)
 |      |      |      |
 | :----: | :----: | :----: |
-|![vq6w75](https://th.wallhaven.cc/small/vq/vq6w75.jpg)[vq6w75 download 4k](https://wallhaven.cc/w/vq6w75)|![1pz973](https://th.wallhaven.cc/small/1p/1pz973.jpg)[1pz973 download 4k](https://wallhaven.cc/w/1pz973)|![9dlj3d](https://th.wallhaven.cc/small/9d/9dlj3d.jpg)[9dlj3d download 4k](https://wallhaven.cc/w/9dlj3d)|
-|![2yqrp9](https://th.wallhaven.cc/small/2y/2yqrp9.jpg)[2yqrp9 download 4k](https://wallhaven.cc/w/2yqrp9)|![yxpyzk](https://th.wallhaven.cc/small/yx/yxpyzk.jpg)[yxpyzk download 4k](https://wallhaven.cc/w/yxpyzk)|![1pz731](https://th.wallhaven.cc/small/1p/1pz731.jpg)[1pz731 download 4k](https://wallhaven.cc/w/1pz731)|
+|![yxpyzk](https://th.wallhaven.cc/small/yx/yxpyzk.jpg)[yxpyzk download 4k](https://wallhaven.cc/w/yxpyzk)|![85yl5k](https://th.wallhaven.cc/small/85/85yl5k.jpg)[85yl5k download 4k](https://wallhaven.cc/w/85yl5k)|![1pz731](https://th.wallhaven.cc/small/1p/1pz731.jpg)[1pz731 download 4k](https://wallhaven.cc/w/1pz731)|
 |![2yqpe6](https://th.wallhaven.cc/small/2y/2yqpe6.jpg)[2yqpe6 download 4k](https://wallhaven.cc/w/2yqpe6)|![d679go](https://th.wallhaven.cc/small/d6/d679go.jpg)[d679go download 4k](https://wallhaven.cc/w/d679go)|![kxqmw1](https://th.wallhaven.cc/small/kx/kxqmw1.jpg)[kxqmw1 download 4k](https://wallhaven.cc/w/kxqmw1)|
 |![qzyw6r](https://th.wallhaven.cc/small/qz/qzyw6r.jpg)[qzyw6r download 4k](https://wallhaven.cc/w/qzyw6r)|![rrlv2j](https://th.wallhaven.cc/small/rr/rrlv2j.jpg)[rrlv2j download 4k](https://wallhaven.cc/w/rrlv2j)|![2yqpk6](https://th.wallhaven.cc/small/2y/2yqpk6.jpg)[2yqpk6 download 4k](https://wallhaven.cc/w/2yqpk6)|
 |![85y2xo](https://th.wallhaven.cc/small/85/85y2xo.jpg)[85y2xo download 4k](https://wallhaven.cc/w/85y2xo)|![6drv9x](https://th.wallhaven.cc/small/6d/6drv9x.jpg)[6drv9x download 4k](https://wallhaven.cc/w/6drv9x)|![gpeo3e](https://th.wallhaven.cc/small/gp/gpeo3e.jpg)[gpeo3e download 4k](https://wallhaven.cc/w/gpeo3e)|
