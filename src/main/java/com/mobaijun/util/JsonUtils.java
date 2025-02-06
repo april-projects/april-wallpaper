@@ -64,7 +64,7 @@ public class JsonUtils {
 
         // 处理每个月的数据
         groupedData.forEach((month, newData) -> {
-            String fileName = "api\\" + month + "-api.json";
+            String fileName = "api/" + month + "-api.json";
             File file = new File(fileName);
             Set<String> existingData = new HashSet<>();
             // 读取已有的数据
