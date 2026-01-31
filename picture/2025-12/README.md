@@ -1,5 +1,5 @@
 ## Wallpaper (2025-12)
-![lyz3xp](https://w.wallhaven.cc/full/ly/wallhaven-lyz3xp.jpg) Today: [lyz3xp](https://th.wallhaven.cc/small/ly/lyz3xp.jpg)
+![lyz3xp](https://th.wallhaven.cc/small/ly/lyz3xp.jpg) Today: [lyz3xp](https://th.wallhaven.cc/small/ly/lyz3xp.jpg)
 |      |      |      |
 | :----: | :----: | :----: |
 |![lyz3xp](https://th.wallhaven.cc/small/ly/lyz3xp.jpg)[lyz3xp download 4k](https://wallhaven.cc/w/lyz3xp)|![yq586l](https://th.wallhaven.cc/small/yq/yq586l.jpg)[yq586l download 4k](https://wallhaven.cc/w/yq586l)|![d83pj3](https://th.wallhaven.cc/small/d8/d83pj3.jpg)[d83pj3 download 4k](https://wallhaven.cc/w/d83pj3)|
