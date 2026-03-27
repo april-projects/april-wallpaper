@@ -1,9 +1,9 @@
 ## Wallpaper (2026-02)
-![9o2gok](https://w.wallhaven.cc/full/9o/wallhaven-9o2gok.jpg) Today: [9o2gok](https://th.wallhaven.cc/small/9o/9o2gok.jpg)
+![zpq9vv](https://th.wallhaven.cc/small/zp/zpq9vv.jpg) Today: [zpq9vv](https://th.wallhaven.cc/small/zp/zpq9vv.jpg)
 |      |      |      |
 | :----: | :----: | :----: |
-|![9o2gok](https://th.wallhaven.cc/small/9o/9o2gok.jpg)[9o2gok download 4k](https://wallhaven.cc/w/9o2gok)|![rqy6yw](https://th.wallhaven.cc/small/rq/rqy6yw.jpg)[rqy6yw download 4k](https://wallhaven.cc/w/rqy6yw)|![zpq9vv](https://th.wallhaven.cc/small/zp/zpq9vv.jpg)[zpq9vv download 4k](https://wallhaven.cc/w/zpq9vv)|
-|![9o2g8k](https://th.wallhaven.cc/small/9o/9o2g8k.jpg)[9o2g8k download 4k](https://wallhaven.cc/w/9o2g8k)|![21d2y6](https://th.wallhaven.cc/small/21/21d2y6.jpg)[21d2y6 download 4k](https://wallhaven.cc/w/21d2y6)|![d8kd6o](https://th.wallhaven.cc/small/d8/d8kd6o.jpg)[d8kd6o download 4k](https://wallhaven.cc/w/d8kd6o)|
+|![zpq9vv](https://th.wallhaven.cc/small/zp/zpq9vv.jpg)[zpq9vv download 4k](https://wallhaven.cc/w/zpq9vv)|![9o2g8k](https://th.wallhaven.cc/small/9o/9o2g8k.jpg)[9o2g8k download 4k](https://wallhaven.cc/w/9o2g8k)|![rqy6yw](https://th.wallhaven.cc/small/rq/rqy6yw.jpg)[rqy6yw download 4k](https://wallhaven.cc/w/rqy6yw)|
+|![9o2gok](https://th.wallhaven.cc/small/9o/9o2gok.jpg)[9o2gok download 4k](https://wallhaven.cc/w/9o2gok)|![21d2y6](https://th.wallhaven.cc/small/21/21d2y6.jpg)[21d2y6 download 4k](https://wallhaven.cc/w/21d2y6)|![d8kd6o](https://th.wallhaven.cc/small/d8/d8kd6o.jpg)[d8kd6o download 4k](https://wallhaven.cc/w/d8kd6o)|
 |![rqy6rj](https://th.wallhaven.cc/small/rq/rqy6rj.jpg)[rqy6rj download 4k](https://wallhaven.cc/w/rqy6rj)|![w56xex](https://th.wallhaven.cc/small/w5/w56xex.jpg)[w56xex download 4k](https://wallhaven.cc/w/w56xex)|![3qw2zy](https://th.wallhaven.cc/small/3q/3qw2zy.jpg)[3qw2zy download 4k](https://wallhaven.cc/w/3qw2zy)|
 |![9o2gd8](https://th.wallhaven.cc/small/9o/9o2gd8.jpg)[9o2gd8 download 4k](https://wallhaven.cc/w/9o2gd8)|![je1d3p](https://th.wallhaven.cc/small/je/je1d3p.jpg)[je1d3p download 4k](https://wallhaven.cc/w/je1d3p)|![21d286](https://th.wallhaven.cc/small/21/21d286.jpg)[21d286 download 4k](https://wallhaven.cc/w/21d286)|
 |![5y53d8](https://th.wallhaven.cc/small/5y/5y53d8.jpg)[5y53d8 download 4k](https://wallhaven.cc/w/5y53d8)|![qr3m1d](https://th.wallhaven.cc/small/qr/qr3m1d.jpg)[qr3m1d download 4k](https://wallhaven.cc/w/qr3m1d)|![je1y2q](https://th.wallhaven.cc/small/je/je1y2q.jpg)[je1y2q download 4k](https://wallhaven.cc/w/je1y2q)|
